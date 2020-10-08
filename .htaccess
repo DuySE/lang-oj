@@ -1,0 +1,72 @@
+RewriteEngine on
+
+RewriteRule ^profile/(\w+)/?$ profile.php?user=$1
+RewriteCond %{THE_REQUEST} profile\.php
+RewriteRule ^profile\.php - [F]
+
+RewriteRule ^blog/(\d+)/?$ forum.php?id=$1
+RewriteCond %{THE_REQUEST} forum\.php
+RewriteRule ^forum\.php - [F]
+
+RewriteRule ^editblog/(\d+)/?$ editBlog.php?id=$1
+RewriteCond %{THE_REQUEST} editBlog\.php
+RewriteRule ^editBlog\.php - [F]
+
+RewriteRule ^contests contest.php
+RewriteRule ^contest/(\d+)/?$ join.php?id=$1
+RewriteRule ^judge/(\d+)/?$ contest.php?jid=$1
+RewriteCond %{THE_REQUEST} contest\.php
+RewriteRule ^contest\.php - [F]
+RewriteCond %{THE_REQUEST} join\.php
+RewriteRule ^join\.php - [F]
+RewriteCond %{THE_REQUEST} index\.php
+RewriteRule ^index\.php - [F]
+
+RewriteRule ^edit/(\d+)?$ editContest.php?id=$1
+RewriteCond %{THE_REQUEST} editContest\.php
+RewriteRule ^editContest\.php - [F]
+
+RewriteRule ^editcomplete analysis.php
+RewriteCond %{THE_REQUEST} analysis\.php
+RewriteRule ^analysis\.php - [F]
+
+RewriteRule ^rank/(\d+)?$ rank.php?id=$1
+RewriteCond %{THE_REQUEST} rank\.php
+RewriteRule ^rank\.php - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^report/(\d+)/(\w+)$ report.php?id=$1&user=$2 [L]
+
+RewriteCond %{THE_REQUEST} report\.php
+RewriteRule ^report\.php - [F]
+
+RewriteRule ^rating rating.php
+RewriteCond %{THE_REQUEST} rating\.php
+RewriteRule ^rating\.php - [F]
+
+RewriteRule ^manage manage.php
+RewriteCond %{THE_REQUEST} manage\.php
+RewriteRule ^manage\.php - [F]
+
+RewriteRule ^practices practice.php
+RewriteRule ^practice/(\d+)/?$ practice.php?id=$1
+RewriteCond %{THE_REQUEST} practice\.php
+RewriteRule ^practice\.php - [F]
+
+RewriteRule ^error gui/error.php
+RewriteCond %{THE_REQUEST} error\.php
+RewriteRule ^error\.php - [F]
+
+RewriteRule ^guide gui.php
+RewriteCond %{THE_REQUEST} gui\.php
+RewriteRule ^gui\.php - [F]
+
+RewriteRule ^feedback feedback.php
+RewriteCond %{THE_REQUEST} feedback\.php
+RewriteRule ^feedback\.php - [F]
+
+Options -Indexes
+ErrorDocument 403 http://langoj.com/error
+ErrorDocument 404 http://langoj.com/error
+

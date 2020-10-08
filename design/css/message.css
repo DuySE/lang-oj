@@ -1,0 +1,25 @@
+/* Bubble message */
+#bubble {
+	background-color: black;
+	color: white;
+	text-align: left;
+	width: 260px;
+	opacity: .85;
+	border-radius: 5px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 14px;
+	padding: 10px 10px 10px 10px;
+	float: right;
+	margin-top: 17%;
+}
+/* Close button (x) of bubble message */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
